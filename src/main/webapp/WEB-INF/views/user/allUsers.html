@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+<div th:each="user : ${userList}"
+     th:text="${user.getId()} +', ' + ${user.getLogin()}"></div>
+</body>
+</html>

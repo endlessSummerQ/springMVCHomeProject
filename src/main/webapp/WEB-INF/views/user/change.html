@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change</title>
+</head>
+<body>
+<form th:method="patch" th:action="@{/change}" th:object="${user}">
+    <label for="login">Enter login</label>
+    <input type="text" th:field="*{login}" id="login">
+    <p th:if="*{#fields.hasErrors('login')}" th:errors="*{login}"></p>
+    <br/>
+    <label for="password">Enter login</label>
+    <input type="password" th:field="*{password}" id="password">
+    <p style="color: red;" th:if="*{#fields.hasErrors('password')}" th:errors="*{password}"></p>
+    <br/>
+    <label for="newPassword">Enter new password</label>
+    <input type="password" th:field="*{newPassword}" id="newPassword">
+    <p style="color: red" th:if="*{#fields.hasErrors('newPassword')}" th:errors="*{newPassword}"></p>
+    <br/>
+    <input type="submit" value="change password">
+</form>
+</body>
+</html>
